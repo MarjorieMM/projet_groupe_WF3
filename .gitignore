@@ -1,0 +1,65 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+#Git ignore back : 
+###> symfony/framework-bundle ###
+WebFleur3_Back/.env.local
+WebFleur3_Back/.env.local.php
+WebFleur3_Back/.env.*.local
+WebFleur3_Back/config/secrets/prod/prod.decrypt.private.php
+WebFleur3_Back/public/bundles/
+WebFleur3_Back/var/
+WebFleur3_Back/vendor/
+WebFleur3_Back/.env
+WebFleur3_Back/config/packages/nelmio_cors.yaml
+###< symfony/framework-bundle ###
+
+###> lexik/jwt-authentication-bundle ###
+WebFleur3_Back/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
+
+
+# Git ignore front :
+# compiled output
+WebFleur3_Front/dist
+WebFleur3_Front/tmp
+WebFleur3_Front/out-tsc
+# Only exists if Bazel was run
+WebFleur3_Front/bazel-out
+
+# dependencies
+WebFleur3_Front/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
