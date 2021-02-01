@@ -10,7 +10,6 @@ WebFleur3_Back/public/bundles/
 WebFleur3_Back/var/
 WebFleur3_Back/vendor/
 WebFleur3_Back/.env
-WebFleur3_Back/config/packages/nelmio_cors.yaml
 ###< symfony/framework-bundle ###
 
 ###> lexik/jwt-authentication-bundle ###
