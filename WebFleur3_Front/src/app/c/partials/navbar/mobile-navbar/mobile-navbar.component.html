@@ -1,0 +1,92 @@
+<!-- Bottom bar -->
+<div class="mobile-nav --fixed-br --w-100 --d-none-md bg-whitesmoke --p-1">
+  <nav class="menu --container --g-a-center --g-j-center --col-3 --gapp-1">
+    <a
+      *ngIf="curUser; else elseBlock"
+      [routerLink]="['/user/account']"
+      [routerLinkActive]="'active-route'"
+      ><i class="fas fa-user --cursor"></i>
+    </a>
+    <ng-template #elseBlock>
+      <a [routerLink]="['/user/login']" [routerLinkActive]="'active-route'"
+        ><i class="fas fa-user --cursor"></i> </a
+    ></ng-template>
+    <i class="fas fa-bars" data-drop="nav" id="nav" (click)="onNavOpen()"></i>
+    <i class="fas fa-shopping-cart" id="cart" data-drop="cart"></i>
+    <!-- cart item counter -->
+    <div *ngIf="onItemQuantityCount() != 0" class="cart-count-block">
+      <div
+        *ngIf="onItemQuantityCount() < 10; else bigNumber"
+        class="cart-count --d-flex --j-center --a-center --full-round bg-charter-pink --light --light-shadow"
+      >
+        {{ onItemQuantityCount() }}
+      </div>
+      <ng-template #bigNumber>
+        <div
+          class="cart-count --d-flex --j-center --a-center --full-round bg-charter-pink --light --light-shadow"
+        >
+          +
+        </div>
+      </ng-template>
+    </div>
+  </nav>
+</div>
+
+<!-- Cart -->
+<div
+  data-dropped="cart"
+  class="cart-interface --fixed-bl --vh-100 --w-100 bg-whitesmoke --d-none"
+>
+  <div class="--d-flex --j-center --py-2">
+    <i class="fas fa-times --cursor" data-drop="cart"></i>
+  </div>
+  <div class="--px-1 --vh-75 --round cart-item-container">
+    <app-cart></app-cart>
+  </div>
+</div>
+
+<!-- Nav -->
+<div
+  data-dropped="nav"
+  class="nav-interface --fixed-bl --vh-25 --w-100 bg-whitesmoke --d-none"
+>
+  <div class="--container --g-a-end">
+    <div class="category-container">
+      <div class="--py-1 --d-flex --a-center category-display">
+        <div class="--p-1">
+          <a
+            [routerLink]="['']"
+            [routerLinkActive]="'active-route-mobile'"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <div
+              class="--light-shadow --bg-light --round --p-1 --cursor"
+              data-hover="bg-charter-pink --light "
+            >
+              Accueil
+            </div>
+          </a>
+        </div>
+        <div class="--p-1" *ngFor="let category of categories">
+          <app-category-list
+            [category]="category"
+            [activeClass]="'active-route-mobile'"
+          ></app-category-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart -->
+<div
+  data-dropped="cart"
+  class="cart-interface --fixed-tl --vh-100 --w-100 bg-whitesmoke --d-none"
+>
+  <div class="--d-flex --j-center --py-2">
+    <i class="fas fa-times --cursor" data-drop="cart"></i>
+  </div>
+  <div class="--px-1">
+    <app-cart></app-cart>
+  </div>
+</div>

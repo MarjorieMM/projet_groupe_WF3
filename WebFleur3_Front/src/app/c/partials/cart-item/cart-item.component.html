@@ -1,0 +1,34 @@
+<div
+  class="--sqr-md-8 --sqr-20 --full-round --light-shadow img-thumbnail"
+  style="background: url('{{ uploads }}{{ item.product.picture }}')
+   center center / cover;"
+></div>
+<div class="--container --g-a-center --gap-1">
+  <div class="--container --gap-1">
+    <h2>{{ item.product.name }}</h2>
+    <p>{{ item.product.price | euroTransform }} €</p>
+  </div>
+</div>
+<div class="--container --g-a-center --g-j-center --gap-1">
+  <div
+    class="--container --g-a-center --g-j-center --col-2 --gap-1 --w-md-80 --p-1 --round --light-shadow"
+  >
+    <h2>{{ item.quantity }}</h2>
+    <div class="--container --g-a-center --g-j-center">
+      <i
+        class="fas fa-plus --cursor --success"
+        (click)="cart.onAddToCart(item.product)"
+      ></i>
+      <i
+        class="fas fa-minus --cursor --danger"
+        (click)="cart.onRemoveOneFromCart(item.product)"
+      ></i>
+    </div>
+  </div>
+</div>
+<div class="--container --g-a-center --g-j-center">
+  <i
+    class="fas fa-times --cursor --danger"
+    (click)="cart.onRemoveFromCart(item.product)"
+  ></i>
+</div>

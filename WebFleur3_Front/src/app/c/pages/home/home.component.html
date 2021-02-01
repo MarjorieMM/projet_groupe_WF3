@@ -1,0 +1,51 @@
+<!-- top page -->
+<div class="--px-2 first-block-container">
+  <div
+    class="--container --g-a-center --g-j-center --vh-50 --vh-md-40 --round --shadow --p-3 bg-charter-blue first-block"
+  >
+    <div class="content --d-flex --a-center --j-center --light">
+      <h1 class="charter-pink --w-100">Web Fleur 3</h1>
+      <div>
+        <p class="--py-1">La boutique florale Lyonnaise</p>
+      </div>
+      <div>
+        <p class="--py-1" *ngIf="currentUser">
+          Bienvenue - {{ currentUser.firstname }} {{ currentUser.lastname }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- category container -->
+  <div class="category-container">
+    <div class="--py-1 --d-flex --a-center category-display">
+      <h2 class="--d-flex --a-center">Catégories :</h2>
+      <div class="--p-1">
+        <div
+          class="--light-shadow bg-charter-pink --light --round --p-1 --cursor"
+        >
+          Tout
+        </div>
+      </div>
+      <div class="--p-1" *ngFor="let category of categories">
+        <app-category-list
+          [category]="category"
+          [activeClass]="'active-route'"
+        ></app-category-list>
+      </div>
+    </div>
+  </div>
+
+  <!-- products container -->
+  <div class="--px-2">
+    <div class="--light-line-bottom"></div>
+    <h2 class="--py-2">Nos produits :</h2>
+    <div class="--container --col-2 --col-md-3 --col-lg-4 --col-xl-5 --gap-2">
+      <app-product-thumbnail
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-product-thumbnail>
+    </div>
+  </div>
+  <div class="--py-3"></div>
+</div>

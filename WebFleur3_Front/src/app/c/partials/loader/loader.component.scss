@@ -1,0 +1,30 @@
+/*
+ * Imports
+ */
+
+@import '../../../../assets/css/vars.scss';
+
+/*
+ * Loader
+ */
+
+.loader {
+    animation: rotate 1s linear infinite;
+    border: solid 0.3em transparent;
+    border-right: solid 0.3em $charter-pink;
+    border-left: solid 0.3em $charter-blue;
+    border-radius: 50%;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-page {
+    z-index: 9;
+}

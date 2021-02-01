@@ -1,0 +1,79 @@
+<div class="--d-none --d-block-md">
+  <div class="desktop-nav --fixed-tl --w-100 --p-1 bg-whitesmoke">
+    <div class="--d-flex --a-center --j-between --px-1">
+      <nav>
+        <ul class="--d-flex">
+          <li class="--d-flex --j-center --a-center --p-1 first-element">
+            <a
+              [routerLink]="['/']"
+              [routerLinkActive]="'active-route'"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <h3 class="--cursor">Accueil</h3>
+            </a>
+          </li>
+          <li
+            *ngFor="let category of categories"
+            class="--d-flex --j-center --a-center --p-1"
+          >
+            <a
+              [routerLink]="['/categorie/', category.id]"
+              [routerLinkActive]="'active-route'"
+            >
+              <h3 class="--cursor">{{ category.name }}</h3>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="right-menu --container --col-2 --g-a-center --gap-2 --px-2 --light-shadow --full-round"
+      >
+        <a
+          *ngIf="curUser; else elseBlock"
+          [routerLink]="['/user/account']"
+          [routerLinkActive]="'active-route'"
+          ><i class="fas fa-user --cursor"></i>
+        </a>
+        <ng-template #elseBlock>
+          <a [routerLink]="['/user/login']" [routerLinkActive]="'active-route'"
+            ><i class="fas fa-user --cursor"></i> </a
+        ></ng-template>
+        <i class="fas fa-shopping-cart --cursor" id="cart" data-drop="cart">
+          <div *ngIf="onItemQuantityCount() != 0">
+            <div
+              *ngIf="onItemQuantityCount() < 10; else bigNumber"
+              class="cart-count --d-flex --j-center --a-center --full-round bg-charter-pink --light --light-shadow"
+            >
+              {{ onItemQuantityCount() }}
+            </div>
+            <ng-template #bigNumber>
+              <div
+                class="cart-count --d-flex --j-center --a-center --full-round bg-charter-pink --light --light-shadow"
+              >
+                +
+              </div>
+            </ng-template>
+          </div>
+        </i>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cart-over --fixed-tl --vh-100 --w-100 bg-charter-pink --d-none"
+    data-drop="cart"
+    data-dropped="cart"
+  ></div>
+  <div
+    data-dropped="cart"
+    class="--fixed-tr --p-3 --w-70 --w-lg-60 --w-xl-50 --vh-100 --d-none"
+  >
+    <div class="cart --bg-light-grey --round --light-shadow">
+      <div class="--d-flex --j-center --py-2">
+        <i class="fas fa-times --cursor" data-drop="cart"></i>
+      </div>
+      <div class="--px-1 cart-item-container --h-75">
+        <app-cart></app-cart>
+      </div>
+    </div>
+  </div>
+</div>

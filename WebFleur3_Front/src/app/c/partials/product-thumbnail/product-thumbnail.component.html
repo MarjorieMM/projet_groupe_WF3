@@ -1,0 +1,18 @@
+<div class="--container --gap-1">
+    <div class="--d-flex --j-between --gap-1">
+        <h3>{{ product.name }}</h3>
+        <p class="--d-flex --j-end --a-end charter-blue">
+            {{ product.price | euroTransform | currency: "EUR":"symbol" }}
+        </p>
+    </div>
+    <a [routerLink]="['/produit/', product.id]">
+        <div class="--vh-md-30 --vh-25 --bg-light-grey --light-shadow --round --cursor" data-hover="--shadow" style="background: url('{{ uploads }}{{ product.picture }}')
+      center center / cover;"></div>
+    </a>
+    <div class="--container">
+        <button class="--cursor" data-send="cart" (click)="cartService.onAddToCart(product)">
+      Ajouter au panier
+      <div data-valid class="bg-whitesmoke --round charter-pink">Ajouté</div>
+    </button>
+    </div>
+</div>

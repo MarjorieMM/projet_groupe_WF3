@@ -1,0 +1,110 @@
+/*
+ * Imports
+ */
+
+@import './assets/css/n-frame.min.css',
+'./assets/css/vars.scss',
+'https://fonts.googleapis.com/css2?family=Karla&display=swap',
+'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css';
+
+/*
+ * Typo
+ */
+
+* {
+    font-family: 'Karla', sans-serif;
+}
+
+
+/*
+ * Global styles
+ */
+
+body {
+    background-color: whitesmoke;
+    position: relative;
+    min-height: 100vh;
+    height: fit-content !important;
+    padding-bottom: 15vh;
+}
+
+button {
+    font-size: 1em;
+}
+
+*::selection {
+    background-color: $charter-pink;
+    color: #fff;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+
+/*
+ * Global class
+ */
+
+a.active-route {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        right: calc(50% - 4px);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $charter-pink;
+    }
+}
+
+a.active-route-mobile {
+    * {
+        background: $charter-pink;
+    }
+    color: #fff;
+}
+
+.charter-blue {
+    color: $charter-blue;
+}
+
+.charter-pink {
+    color: $charter-pink;
+}
+
+.bg-charter-blue {
+    background: $charter-blue;
+}
+
+.bg-charter-pink {
+    background: $charter-pink;
+}
+
+.bg-whitesmoke {
+    background-color: whitesmoke;
+}
+
+
+/*
+ * overriding
+ */
+
+.--round {
+    border-radius: 15px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

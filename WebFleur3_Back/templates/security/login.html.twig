@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <div class="container vh-100 d-flex align-items-center text-center justify-content-center border bgadmin">
+        <div class="row">
+            <div class="col-12  ">
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+
+
+                    <h1>Web Fleur 3 Admin</h1>
+                    <label for="inputEmail">Email : </label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+                    <label class="mt-2" for="inputPassword">Mot de passe : </label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" required>
+                </form>
+                    <a href="{{ path('admin') }}"> <button class="mt-2 btn btn-lg btn-light" type="submit">Connexion</button></a>
+
+{#                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">#}
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+<h1 class="--p-1">Validation</h1>
+<section class="" *ngIf="!paidFor">
+    <div class="--container --col-md-3 --gap-2 --p-3">
+        <div class="--container --gap-2 --p-2 --round --light-shadow --bg-light">
+            <h1>Utilisateur</h1>
+            <div>
+                <p>{{currentUser.lastname}}</p>
+                <p>{{currentUser.firstname}}</p>
+                <p>{{currentUser.email}}</p>
+            </div>
+            <h1>Adresse</h1>
+            <div>
+                <p>{{currentUser.address}}</p>
+                <p>{{currentUser.town}}</p>
+                <p>{{currentUser.cp}}</p>
+            </div>
+            <div class="--container --g-j-end">
+                <a [routerLink]="[ '/user/account' ]">
+                    <button class="--w-100 --cursor --round --p-1 --light bg-charter-pink">
+                        Modifier
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="--container --gap-2 --p-2 --round --light-shadow --bg-light">
+            <h1>Panier</h1>
+            <p *ngIf="total > 0">Total : {{ total | euroTransform }} €</p>
+            <!-- check cart content -->
+            <div *ngIf="cart.length > 0" class="--container --gap-1">
+                <div *ngFor="let item of cart" class="--p-1 --round --light-shadow --container --g-a-center --gap-1 --col-3">
+                    <p>{{ item.quantity }}</p>
+                    <h2>{{ item.product.name }}</h2>
+                    <p>{{ item.product.price | euroTransform }} €</p>
+                </div>
+            </div>
+            <!-- check cart content -->
+            <div *ngIf="cart.length == 0">
+                Votre panier est vide
+            </div>
+        </div>
+        <div class="paypal --container --g-a-center --g-j-center --vh-60 ">
+            <div #paypal></div>
+        </div>
+    </div>
+</section>
+
+<div class="--vh-75 --d-flex --j-center --d-center" *ngIf="paidFor ">
+    <h1>
+        paiement effectué !
+    </h1>
+</div>

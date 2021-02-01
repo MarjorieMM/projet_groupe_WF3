@@ -1,0 +1,74 @@
+$charter-blue: #0a1f35;
+$charter-pink: #ff5258;
+.plant-block {
+  background: padding-box
+    url("../../../../assets/images/sunny-couch-and-shelved-plants.jpg") center
+    center / cover no-repeat;
+  @media (max-width: 768px) {
+    border-radius: 0;
+  }
+}
+
+.mat-charter-pink {
+  background-color: $charter-pink;
+  color: white;
+}
+
+.mat-charter-blue {
+  background-color: $charter-blue;
+  color: white;
+}
+
+.titres-items {
+  position: absolute;
+  right: 5px;
+}
+
+.items {
+  position: absolute;
+  left: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.plant-block-container {
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card {
+  margin: 5% auto 50% auto;
+  padding: 5%;
+}
+button {
+  margin: 10px;
+}
+
+/*
+ * Home styles
+ */
+
+.content {
+  text-align: center;
+  h1 {
+    font-size: 3.5em;
+  }
+}
+.blue {
+  margin-left: 8px;
+}
+
+@media (min-width: 768px) {
+  mat-card {
+    margin: 5% auto;
+    padding: 5%;
+  }
+}

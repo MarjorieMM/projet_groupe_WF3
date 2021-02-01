@@ -1,0 +1,46 @@
+/*
+ * Imports
+ */
+
+@import "../../../../../assets/css/vars.scss";
+
+/*
+ * Desktop nav
+ */
+
+i {
+    z-index: 10;
+}
+
+.desktop-nav {
+    z-index: 10;
+}
+
+.first-element {
+    padding-left: 0;
+}
+
+.cart {
+    z-index: 1;
+    margin-top: 8vh;
+    height: 90%;
+}
+
+.cart-over {
+    opacity: 0.05;
+}
+
+.right-menu {
+    position: relative;
+}
+
+.cart-count {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.8em;
+    z-index: 11;
+    position: absolute;
+    top: 110%;
+    right: 22%;
+    width: 2.5vh;
+    height: 2.5vh;
+}

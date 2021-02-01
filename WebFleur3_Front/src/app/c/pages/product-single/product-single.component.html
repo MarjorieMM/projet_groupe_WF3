@@ -1,0 +1,42 @@
+<div class="--container --col-md-2">
+  <div
+    class="--vh-60 --vh-md-80"
+    style="background: url('{{ uplaods }}{{ product.picture }}')
+    center center / cover;"
+  ></div>
+  <div>
+    <div class="--container --col-2 --p-2 --gap-1">
+      <a [routerLink]="['/categorie/', product.category.id]">
+        <button class="--p-1 --round --light-shadow --bg-light --cursor">
+          Retour aux articles
+        </button>
+      </a>
+      <button
+        class="--p-1 --round --light-shadow bg-charter-pink --light --cursor"
+        data-send="cart"
+        (click)="cart.onAddToCart(product)"
+      >
+        Ajouter au panier
+        <div
+          data-valid
+          class="bg-charter-pink --round --light --d-flex --j-center --a-center"
+        >
+          Ajouté
+        </div>
+      </button>
+    </div>
+    <div class="--container --col-2 --col-md-1 --px-2">
+      <h2>{{ product.name }}</h2>
+      <p class="--txt-right align-desktop">
+        {{ product.price | euroTransform }} €
+      </p>
+    </div>
+    <div class="--container --gap-1 --p-2">
+      <h2 class="--w-fit --line-bottom">Description</h2>
+      <p>
+        {{ product.description }}
+      </p>
+    </div>
+    <div class="--py-3"></div>
+  </div>
+</div>

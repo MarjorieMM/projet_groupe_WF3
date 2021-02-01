@@ -1,0 +1,23 @@
+$charter-blue: #0a1f35;
+$charter-pink: #ff5258;
+
+.width {
+  width: 80%;
+  margin: auto;
+}
+button {
+  margin: 0.5em;
+}
+
+.childrenWidth100 > * {
+  width: 100%;
+}
+.mat-charter-pink {
+  background-color: $charter-pink;
+  color: white;
+}
+
+.mat-charter-blue {
+  background-color: $charter-blue;
+  color: white;
+}

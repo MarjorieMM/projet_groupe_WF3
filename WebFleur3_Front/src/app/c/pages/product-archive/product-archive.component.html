@@ -1,0 +1,10 @@
+<!-- products container -->
+<div class="--px-2">
+    <h2 class="--py-2">Produits {{category.name}}</h2>
+    <div class="--container --col-2 --col-md-3 --col-lg-4 --col-xl-5 --gap-2">
+        <ng-template ngFor [ngForOf]="products" let-product>
+            <app-product-thumbnail *ngIf="product.category.id == category.id" [product]="product"></app-product-thumbnail>
+        </ng-template>
+    </div>
+</div>
+<div class="--py-3"></div>

@@ -1,0 +1,12 @@
+.error{
+  background: url('https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_1280.jpg') center center / cover no-repeat;
+  @media (max-width: 768px) {
+  border-radius: 0;
+}
+}
+
+.errorFont{
+  font-size: 5em;
+  color: white;
+
+}

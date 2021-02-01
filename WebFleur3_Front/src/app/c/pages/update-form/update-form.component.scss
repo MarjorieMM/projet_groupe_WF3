@@ -1,0 +1,28 @@
+$charter-blue: #0a1f35;
+$charter-pink: #ff5258;
+
+.mat-charter-pink {
+  background-color: $charter-pink;
+  color: white;
+}
+
+.mat-charter-blue {
+  background-color: $charter-blue;
+  color: white;
+}
+
+.width {
+  width: 80%;
+  margin: auto;
+  padding-bottom: 10em;
+}
+
+@media (min-width: 1200px) {
+  .sec1 {
+    margin-right: 5em;
+    margin-left: 5em;
+  }
+  .sec2 {
+    margin-left: 5em;
+  }
+}

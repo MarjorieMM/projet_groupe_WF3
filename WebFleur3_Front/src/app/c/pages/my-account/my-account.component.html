@@ -1,0 +1,61 @@
+<div class="--px-2 plant-block-container">
+  <div
+    class="--container --g-a-center --g-j-center --vh-50 --vh-md-40 --round --shadow --p-3 bg-charter-blue plant-block"
+  >
+    <div class="content --d-flex --a-center --j-center --light">
+      <h1 class="charter-pink --w-100">wf3</h1>
+      <h2 calss="--py-1">Bienvenue dans votre compte WebFleur 3</h2>
+    </div>
+  </div>
+
+  <mat-card class="--w-lg-70 --w-md-70 --w-90">
+    <mat-card-title>
+      <h3>Vos informations</h3>
+    </mat-card-title>
+    <mat-card-content>
+      <mat-grid-list *ngIf="curUser" cols="2" rowHeight="50px">
+        <mat-grid-tile> <p class="titres-items">Nom:</p> </mat-grid-tile>
+        <mat-grid-tile>
+          <p class="items">{{ curUser.lastname }} {{ curUser.firstname }}</p>
+        </mat-grid-tile>
+
+        <mat-grid-tile> <p class="titres-items">Email:</p> </mat-grid-tile>
+        <mat-grid-tile>
+          <p class="items">{{ curUser.email }}</p>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <p class="titres-items">Adresse de livraison:</p>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <p class="items">{{ curUser.address }}</p>
+        </mat-grid-tile>
+
+        <mat-grid-tile></mat-grid-tile>
+        <mat-grid-tile>
+          <p class="items">{{ curUser.cp }} {{ curUser.town }}</p>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <p class="titres-items">Vos commandes passées:</p>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <p class="items">Commandes...</p>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+    <mat-card-actions class="--d-flex --j-center">
+      <button mat-raised-button color="charter-pink" (click)="logout()">
+        Se déconnecter
+      </button>
+      <a class="blue" routerLink="/user/update-account">
+        <button mat-raised-button color="charter-blue">
+          Mettre à jour mon compte
+        </button></a
+      >
+      <button mat-raised-button color="charter-blue" (click)="deleteAccount()">
+        Effacer mon compte
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
